@@ -1,0 +1,10 @@
+<h1>My Blog</h1>
+<% @posts.each do |post| %>
+  <h2><%= post.title %></h2>
+  <p>
+    (<%= post.categories.map(&:name).join ', ' %>)
+  </p>
+  <p>
+    <%= post.body %>
+  </p>
+<% end %>

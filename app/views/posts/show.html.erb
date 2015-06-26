@@ -1,0 +1,8 @@
+<h1><%= @post.title %></h1>
+
+<div class="">
+  <%= @post.body %>
+</div>
+<br><br><br>
+<%= link_to 'Back', posts_path %>&nbsp &#9830 &nbsp
+<%= link_to 'Edit', "/posts/#{@post.id}/edit"%>
