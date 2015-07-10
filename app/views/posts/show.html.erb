@@ -4,5 +4,13 @@
   <%= @post.body %>
 </div>
 <br><br><br>
-<%= link_to 'Back', posts_path %>&nbsp &#9830 &nbsp
-<%= link_to 'Edit', "/posts/#{@post.id}/edit"%>
+
+<ul>
+<% @post.categories.each do |category| %>
+<li><%= link_to category.name, "/categories/#{category.id}"%></li>
+<% end %>
+</ul>
+<%= link_to 'Back', posts_path %>&nbsp; &#9830; &nbsp;
+<%= link_to 'Edit', "/posts/#{@post.id}/edit"%>&nbsp; &#9830; &nbsp;
+<%= link_to 'Delete', post_path(@post), method: :delete %>&nbsp; &#9830; &nbsp;
+<%= link_to 'Categories', categories_path %>

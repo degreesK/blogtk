@@ -31,6 +31,11 @@ class PostsController < ApplicationController
     end
 
     def destroy
-
+      @post = Post.find params[:id]
+      if @post.delete
+        redirect_to posts_path
+      else
+        redirect_to :back
+      end
     end
 end
